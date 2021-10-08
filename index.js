@@ -71,7 +71,7 @@ function uk() {
   location.reload();
 }
 
-const container = document.getElementById("container");
+const container = document.getElementById("main");
 
 // FETCHING NEWS
 const xhr = new XMLHttpRequest();
@@ -101,23 +101,20 @@ xhr.onload = function () {
       if (element === null) {
         console.log("Some Problem");
       }
-      let news = `
-      <div class="card mb-3">
-      <div class="row g-0">
-        <div class="col-md-4">
-          <img src="${element["urlToImage"]}" class="img-fluid rounded-start" alt="..." />
-        </div>
-        <div class="col-md-8">
-          <div class="card-body">
-            <h5 class="card-title">${element["title"]}</h5>
-            <p class="card-text">
-            ${element["description"]}
-            </p>
-            <a href="${element["url"]}" target="_BLANK">Click Here to read more</a>
+      let news = `      <div class="card mb-3">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img src="${element["urlToImage"]}" class="img-fluid rounded-start" alt="..." />
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">${element["title"]}</h5>
+              <p class="card-text">${element["description"]}</p>
+              <a href=""${element["url"]}"">Click Here to read more</a>
+            </div>
           </div>
         </div>
-      </div>
-    </div>`;
+      </div>`;
 
       newsHtml += news;
     });
@@ -134,21 +131,3 @@ xhr.onload = function () {
 };
 
 xhr.send();
-
-// Searching
-
-let search = document.getElementById("searchTxt");
-search.addEventListener("input", function () {
-  let inputVal = search.value.toLowerCase();
-  // console.log('Input event fired!', inputVal);
-  // let noteCards = document.getElementsByClassName("noteCard");
-  Array.from(container).forEach(function (element) {
-    let cardTxt = element.getElementsByTagName("p")[0].innerText;
-    if (cardTxt.includes(inputVal)) {
-      element.style.display = "block";
-    } else {
-      element.style.display = "none";
-    }
-    // console.log(cardTxt);
-  });
-});
