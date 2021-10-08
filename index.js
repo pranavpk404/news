@@ -1,69 +1,43 @@
 // Initialize the news api parameters and changing it to users need
-const container = document.getElementById("container");
 
+let lsc = localStorage.getItem("categoryL");
 let country = "in";
-let category = "technology";
+let category = lsc;
+console.log(lsc);
+
 const newsName = document.getElementById("newsName");
 function general() {
-  category = "general";
-  xhr.open(
-    "GET",
-    `https://saurav.tech/NewsAPI/top-headlines/category/${category}/${country}.json`,
-    true
-  );
-  load();
-  newsName.innerText = "Top News In General";
+  categoryV = "general";
+  localStorage.setItem("categoryL", categoryV);
+  location.reload();
 }
 function science() {
-  category = "science";
-  xhr.open(
-    "GET",
-    `https://saurav.tech/NewsAPI/top-headlines/category/${category}/${country}.json`,
-    true
-  );
-  load();
-  newsName.innerText = "Top News In Science";
+  categoryV = "science";
+  localStorage.setItem("categoryL", categoryV);
+  location.reload();
 }
 function technology() {
-  category = "technology";
-  xhr.open(
-    "GET",
-    `https://saurav.tech/NewsAPI/top-headlines/category/${category}/${country}.json`,
-    true
-  );
-  load();
-  newsName.innerText = "Top News In Technology";
+  categoryV = "technology";
+  localStorage.setItem("categoryL", categoryV);
+  location.reload();
 }
 function entertainment() {
-  category = "entertainment";
-  xhr.open(
-    "GET",
-    `https://saurav.tech/NewsAPI/top-headlines/category/${category}/${country}.json`,
-    true
-  );
-  load();
-  newsName.innerText = "Top News In Entertainment";
+  categoryV = "entertainment";
+  localStorage.setItem("categoryL", categoryV);
+  location.reload();
 }
 function health() {
-  category = "health";
-  xhr.open(
-    "GET",
-    `https://saurav.tech/NewsAPI/top-headlines/category/${category}/${country}.json`,
-    true
-  );
-  load();
-  newsName.innerText = "Top News In Health";
+  categoryV = "health";
+  localStorage.setItem("categoryL", categoryV);
+  location.reload();
 }
 function sports() {
-  category = "sports";
-  xhr.open(
-    "GET",
-    `https://saurav.tech/NewsAPI/top-headlines/category/${category}/${country}.json`,
-    true
-  );
-  load();
-  newsName.innerText = "Top News In Sports";
+  categoryV = "sports";
+  localStorage.setItem("categoryL", categoryV);
+  location.reload();
 }
+
+const container = document.getElementById("container");
 
 // FETCHING NEWS
 const xhr = new XMLHttpRequest();
@@ -72,7 +46,9 @@ xhr.open(
   `https://saurav.tech/NewsAPI/top-headlines/category/${category}/${country}.json`,
   true
 );
-
+document.getElementById(
+  "newsName"
+).innerText = `Showing Headlines about ${lsc}`;
 // What to do when response is ready
 function load() {
   xhr.onload = function () {
