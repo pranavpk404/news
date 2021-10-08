@@ -3,7 +3,7 @@
 let localStorageCategory = localStorage.getItem("categoryL");
 let localStorageCountry = localStorage.getItem("countryL");
 
-let category = localStorageCategory || "general";
+let category = localStorageCategory || "technology";
 let country = localStorageCountry || "in";
 const newsName = document.getElementById("newsName");
 console.log(category);
@@ -90,15 +90,18 @@ if (localStorageCategory === null && localStorageCountry === null) {
   ).innerText = `Showing Headlines about ${category}`;
 }
 // What to do when response is ready
-function load() {
-  xhr.onload = function () {
-    if (this.status === 200) {
-      let json = JSON.parse(this.responseText);
-      let articles = json.articles;
-      console.log(articles);
-      let newsHtml = "";
-      articles.forEach(function (element) {
-        let news = `
+
+xhr.onload = function () {
+  if (this.status === 200) {
+    let json = JSON.parse(this.responseText);
+    let articles = json.articles;
+    console.log(articles);
+    let newsHtml = "";
+    articles.forEach(function (element) {
+      if (element === null) {
+        console.log("Some Problem");
+      }
+      let news = `
       <div class="card mb-3">
       <div class="row g-0">
         <div class="col-md-4">
@@ -116,21 +119,36 @@ function load() {
       </div>
     </div>`;
 
-        newsHtml += news;
-      });
-      container.innerHTML = newsHtml;
-    } else {
-      document.getElementById("alert").innerHTML = `
+      newsHtml += news;
+    });
+    container.innerHTML = newsHtml;
+  } else {
+    document.getElementById("alert").innerHTML = `
     
     <div class="alert alert-danger" role="alert">
       Some Problem Occured with Server 😢!
     </div>;`;
 
-      console.log("Some error occured");
+    console.log("Some error occured");
+  }
+};
+
+xhr.send();
+
+// Searching
+
+let search = document.getElementById("searchTxt");
+search.addEventListener("input", function () {
+  let inputVal = search.value.toLowerCase();
+  // console.log('Input event fired!', inputVal);
+  // let noteCards = document.getElementsByClassName("noteCard");
+  Array.from(container).forEach(function (element) {
+    let cardTxt = element.getElementsByTagName("p")[0].innerText;
+    if (cardTxt.includes(inputVal)) {
+      element.style.display = "block";
+    } else {
+      element.style.display = "none";
     }
-  };
-
-  xhr.send();
-}
-
-load();
+    // console.log(cardTxt);
+  });
+});
