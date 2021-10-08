@@ -21,7 +21,6 @@ nav ul li {
   margin-right: 20px;
   transition-duration: 0.5s;
 }
-/*  */
 
 .dropbtn {
   background-color: #000000;
@@ -109,4 +108,10 @@ nav ul li {
   background-clip: border-box;
   border: 1px solid rgba(0, 0, 0, 0.125);
   border-radius: 0.25rem;
+}
+.card-title {
+  font-size: 25px;
+}
+.card-text {
+  font-size: 18px;
 }
