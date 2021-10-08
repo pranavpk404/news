@@ -35,9 +35,7 @@
             <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="#">Home</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Link</a>
-            </li>
+
             <li class="nav-item dropdown">
               <a
                 class="nav-link dropdown-toggle"
@@ -47,19 +45,40 @@
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
               >
-                Dropdown
+                Category
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li><a class="dropdown-item" href="#">Action</a></li>
-                <li><a class="dropdown-item" href="#">Another action</a></li>
-                <li><hr class="dropdown-divider" /></li>
                 <li>
-                  <a class="dropdown-item" href="#">Something else here</a>
+                  <a class="dropdown-item" onclick="general()" href="#"
+                    >General</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" onclick="science()" href="#"
+                    >Science</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" onclick="technology()" href="#"
+                    >Technology</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" onclick="entertainment()" href="#"
+                    >Entertainment</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" onclick="health()" href="#"
+                    >Health</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" onclick="sports()" href="#"
+                    >Sports</a
+                  >
                 </li>
               </ul>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link disabled">Disabled</a>
             </li>
           </ul>
           <form class="d-flex">
@@ -77,9 +96,9 @@
       </div>
     </nav>
     <div id="alert"></div>
-    <h3 class="my-3">
-      Top News<span class="badge bg-secondary">In Health</span>
-    </h3>
+    <div class="box mx-5">
+      <h3 id="newsName">Top News in Technology</h3>
+    </div>
     <div class="container my-3" id="container"></div>
   </body>
   <script
