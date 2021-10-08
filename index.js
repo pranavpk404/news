@@ -1,11 +1,14 @@
 // Initialize the news api parameters and changing it to users need
 
-let lsc = localStorage.getItem("categoryL");
-let country = "in";
-let category = lsc;
-console.log(lsc);
+let localStorageCategory = localStorage.getItem("categoryL");
+let localStorageCountry = localStorage.getItem("countryL");
 
+let category = localStorageCategory || "general";
+let country = localStorageCountry || "in";
 const newsName = document.getElementById("newsName");
+console.log(category);
+console.log(country);
+
 function general() {
   categoryV = "general";
   localStorage.setItem("categoryL", categoryV);
@@ -37,6 +40,37 @@ function sports() {
   location.reload();
 }
 
+function india() {
+  countryV = "in";
+  localStorage.setItem("countryL", countryV);
+  location.reload();
+}
+function usa() {
+  countryV = "us";
+  localStorage.setItem("countryL", countryV);
+  location.reload();
+}
+function australia() {
+  countryV = "au";
+  localStorage.setItem("countryL", countryV);
+  location.reload();
+}
+function russia() {
+  countryV = "ru";
+  localStorage.setItem("countryL", countryV);
+  location.reload();
+}
+function france() {
+  countryV = "fr";
+  localStorage.setItem("countryL", countryV);
+  location.reload();
+}
+function uk() {
+  countryV = "gb";
+  localStorage.setItem("countryL", countryV);
+  location.reload();
+}
+
 const container = document.getElementById("container");
 
 // FETCHING NEWS
@@ -46,9 +80,15 @@ xhr.open(
   `https://saurav.tech/NewsAPI/top-headlines/category/${category}/${country}.json`,
   true
 );
-document.getElementById(
-  "newsName"
-).innerText = `Showing Headlines about ${lsc}`;
+if (localStorageCategory === null && localStorageCountry === null) {
+  document.getElementById(
+    "newsName"
+  ).innerText = `Showing Headlines about General`;
+} else {
+  document.getElementById(
+    "newsName"
+  ).innerText = `Showing Headlines about ${category}`;
+}
 // What to do when response is ready
 function load() {
   xhr.onload = function () {
@@ -70,7 +110,7 @@ function load() {
             <p class="card-text">
             ${element["description"]}
             </p>
-            <a href="${element["url"]}">Click Here to read more</a>
+            <a href="${element["url"]}" target="_BLANK">Click Here to read more</a>
           </div>
         </div>
       </div>
