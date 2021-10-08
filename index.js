@@ -1,12 +1,13 @@
 // Initialize the news api parameters
 let country = "in";
 let category = "sports";
-let apiKey = "7c30031db4ad4e23a0c8e4638cda64a9";
+
 const container = document.getElementById("container");
 const xhr = new XMLHttpRequest();
 xhr.open(
   "GET",
-  `https://saurav.tech/NewsAPI/top-headlines/category/health/in.json`,
+
+  `https://saurav.tech/NewsAPI/top-headlines/category/${category}/${country}.json`,
   true
 );
 
