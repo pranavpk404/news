@@ -1,18 +1,12 @@
-// https://newsapi.org/v2/everything?q=world&from=2021-09-30&sortBy=popularity&apiKey=7c30031db4ad4e23a0c8e4638cda64a9
-function p(str) {
-  console.log(str);
-}
 // Initialize the news api parameters
-let source = "the-times-of-india";
+let country = "in";
+let category = "sports";
 let apiKey = "7c30031db4ad4e23a0c8e4638cda64a9";
-const url = `https://newsapi.org/v2/everything?q=world&from=2021-09-30&sortBy=popularity&apiKey=${apiKey}`;
-
 const container = document.getElementById("container");
-
 const xhr = new XMLHttpRequest();
 xhr.open(
   "GET",
-  `https://newsapi.org/v2/everything?q=world&from=2021-09-30&sortBy=popularity&apiKey=${apiKey}`,
+  `https://saurav.tech/NewsAPI/top-headlines/category/health/in.json`,
   true
 );
 
@@ -35,9 +29,6 @@ xhr.onload = function () {
             <p class="card-text">
             ${element["description"]}
             </p>
-            <p class="card-text">
-              <small class="text-muted"></small>
-            </p>
             <a href="${element["url"]}">Click Here to read more</a>
           </div>
         </div>
@@ -59,3 +50,5 @@ xhr.onload = function () {
 };
 
 xhr.send();
+
+// https://github.com/SauravKanchan/NewsAPI
