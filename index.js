@@ -101,7 +101,8 @@ xhr.onload = function () {
       if (element === null) {
         console.log("Some Problem");
       }
-      let news = `      <div class="card mb-3">
+      let news = `
+      <div class="card mb-3">
         <div class="row g-0">
           <div class="col-md-4">
             <img src="${element["urlToImage"]}" class="img-fluid rounded-start" alt="..." />
@@ -110,7 +111,7 @@ xhr.onload = function () {
             <div class="card-body">
               <h5 class="card-title">${element["title"]}</h5>
               <p class="card-text">${element["description"]}</p>
-              <a href=""${element["url"]}"">Click Here to read more</a>
+              <a href="${element["url"]}" target="_BLANK">Click Here to read more</a>
             </div>
           </div>
         </div>
@@ -120,9 +121,9 @@ xhr.onload = function () {
     });
     container.innerHTML = newsHtml;
   } else {
-    document.getElementById("alert").innerHTML = `
+    document.getElementById("body").innerHTML = `
     
-    <div class="alert alert-danger" role="alert">
+    <div class="alert">
       Some Problem Occured with Server 😢!
     </div>;`;
 
@@ -131,3 +132,4 @@ xhr.onload = function () {
 };
 
 xhr.send();
+// https://saurav.tech/NewsAPI/top-headlines/category/general/in.json
