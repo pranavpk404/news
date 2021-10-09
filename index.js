@@ -95,17 +95,16 @@ xhr.onload = function () {
   if (this.status === 200) {
     let json = JSON.parse(this.responseText);
     let articles = json.articles;
-    console.log(articles);
     let newsHtml = "";
     articles.forEach(function (element) {
       if (element === null) {
         console.log("Some Problem");
       }
       let news = `
-      <div class="card mb-3">
-        <div class="row g-0">
+      <div class="card">
+        <div class="row">
           <div class="col-md-4">
-            <img src="${element["urlToImage"]}" class="img-fluid rounded-start" alt="..." />
+            <img src="${element["urlToImage"]}" class="img-card" alt="..." />
           </div>
           <div class="col-md-8">
             <div class="card-body">
@@ -132,4 +131,3 @@ xhr.onload = function () {
 };
 
 xhr.send();
-// https://saurav.tech/NewsAPI/top-headlines/category/general/in.json

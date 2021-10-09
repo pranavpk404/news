@@ -35,8 +35,6 @@ nav ul li {
   position: relative;
   display: inline-block;
 }
-
-/* Dropdown Content (Hidden by Default) */
 .dropdown-content {
   display: none;
   position: absolute;
@@ -47,7 +45,6 @@ nav ul li {
   z-index: 1;
 }
 
-/* Links inside the dropdown */
 .dropdown-content a {
   color: black;
   padding: 10px;
@@ -56,18 +53,14 @@ nav ul li {
   font-size: 14px;
 }
 
-/* Change color of dropdown links on hover */
 .dropdown-content a:hover {
   background-color: #000000;
   color: white;
 }
 
-/* Show the dropdown menu on hover */
 .dropdown:hover .dropdown-content {
   display: block;
 }
-
-/* Change the background color of the dropdown button when the dropdown content is shown */
 .dropdown:hover .dropbtn {
   background-color: #061f58af;
   border-radius: 5px;
@@ -104,9 +97,9 @@ nav ul li {
   font-size: 18px;
 }
 
-.img-fluid {
+.img-card {
   max-width: 100%;
-  height: auto;
+  height: 100%;
   border: 2px rgb(0, 0, 0) solid;
   border-radius: 5px;
 }
