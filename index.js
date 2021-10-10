@@ -74,33 +74,40 @@ function uk() {
 const container = document.getElementById("main");
 
 // FETCHING NEWS
-const xhr = new XMLHttpRequest();
-xhr.open(
-  "GET",
-  `https://saurav.tech/NewsAPI/top-headlines/category/${category}/${country}.json`,
-  true
-);
-if (localStorageCategory === null && localStorageCountry === null) {
-  document.getElementById(
-    "newsName"
-  ).innerText = `Showing Headlines about General`;
+async function f() {
+  let response = await fetch(
+    `https://saurav.tech/NewsAPI/top-headlines/category/${category}/${country}.json`
+  );
+  let news = response.json();
+  // Checking for bad code
+  if (response.status === 200) {
+    return news;
+  } else {
+    document.getElementById("body").innerHTML = `
+    <div class="alert">
+      Some Problem Occured with Server 😢!
+    </div>;`;
+
+    console.log("Some error occured");
+  }
+}
+
+if (localStorageCategory === null) {
+  document.getElementById("newsName").innerText = `Latest News about General`;
 } else {
   document.getElementById(
     "newsName"
-  ).innerText = `Showing Headlines about ${category}`;
+  ).innerText = `Latest News about ${category}`;
 }
-// What to do when response is ready
 
-xhr.onload = function () {
-  if (this.status === 200) {
-    let json = JSON.parse(this.responseText);
-    let articles = json.articles;
-    let newsHtml = "";
-    articles.forEach(function (element) {
-      if (element === null) {
-        console.log("Some Problem");
-      }
-      let news = `
+let a = f();
+a.then((data) => populate(data));
+
+function populate(data) {
+  let articles = data.articles;
+  let newsHtml = "";
+  articles.forEach(function (element) {
+    let news = `
       <div class="card">
         <div class="row">
           <div class="col-md-4">
@@ -116,18 +123,7 @@ xhr.onload = function () {
         </div>
       </div>`;
 
-      newsHtml += news;
-    });
-    container.innerHTML = newsHtml;
-  } else {
-    document.getElementById("body").innerHTML = `
-    
-    <div class="alert">
-      Some Problem Occured with Server 😢!
-    </div>;`;
-
-    console.log("Some error occured");
-  }
-};
-
-xhr.send();
+    newsHtml += news;
+  });
+  container.innerHTML = newsHtml;
+}
