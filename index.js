@@ -73,18 +73,8 @@ function uk() {
 
 const container = document.getElementById("main");
 
-const spinner = document.getElementById("spinner");
-
-function showSpinner() {
-  spinner.className = "show";
-  setTimeout(() => {
-    spinner.className = spinner.className.replace("show", "");
-  }, 5000);
-}
-
 // FETCHING NEWS
 async function fetching() {
-  showSpinner()
   let response = await fetch(
     `https://saurav.tech/NewsAPI/top-headlines/category/${category}/${country}.json`
   );
