@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <!-- Required meta tags -->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="shortcut icon" href="icon.svg" type="image/x-icon" />
@@ -18,67 +17,59 @@
     <header>
       <nav class="navbar">
         <img id="icon" src="icon.svg" alt="icon" />
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul>
-            <li id="list">
-              <div class="dropdown">
-                <button class="dropbtn">Category</button>
-                <div class="dropdown-content">
-                  <a class="dropdown-item" onclick="general()" href="#"
-                    >General</a
-                  >
-                  <a class="dropdown-item" onclick="science()" href="#"
-                    >Science</a
-                  >
-                  <a class="dropdown-item" onclick="technology()" href="#"
-                    >Technology</a
-                  >
-                  <a class="dropdown-item" onclick="entertainment()" href="#"
-                    >Entertainment</a
-                  >
-                  <a class="dropdown-item" onclick="health()" href="#"
-                    >Health</a
-                  >
-                  <a class="dropdown-item" onclick="sports()" href="#"
-                    >Sports</a
-                  >
-                </div>
+        <ul>
+          <li id="list">
+            <div class="dropdown">
+              <button class="dropbtn">Category</button>
+              <div class="dropdown-content">
+                <a class="dropdown-item" onclick="general()" href="#"
+                  >General</a
+                >
+                <a class="dropdown-item" onclick="science()" href="#"
+                  >Science</a
+                >
+                <a class="dropdown-item" onclick="technology()" href="#"
+                  >Technology</a
+                >
+                <a class="dropdown-item" onclick="entertainment()" href="#"
+                  >Entertainment</a
+                >
+                <a class="dropdown-item" onclick="health()" href="#">Health</a>
+                <a class="dropdown-item" onclick="sports()" href="#">Sports</a>
               </div>
-            </li>
-            <li id="list">
-              <div class="dropdown">
-                <button class="dropbtn">Country</button>
-                <div class="dropdown-content">
-                  <a class="dropdown-item" onclick="india()" href="#">India</a>
-                  <a class="dropdown-item" onclick="usa()" href="#"
-                    >United States</a
-                  >
-                  <a class="dropdown-item" onclick="australia()" href="#"
-                    >Australia</a
-                  >
-                  <a class="dropdown-item" onclick="russia()" href="#"
-                    >Russia</a
-                  >
-                  <a class="dropdown-item" onclick="france()" href="#"
-                    >France</a
-                  >
-                  <a class="dropdown-item" onclick="uk()" href="#"
-                    >United Kingdom</a
-                  >
-                </div>
+            </div>
+          </li>
+          <li id="list">
+            <div class="dropdown">
+              <button class="dropbtn">Country</button>
+              <div class="dropdown-content">
+                <a class="dropdown-item" onclick="india()" href="#">India</a>
+                <a class="dropdown-item" onclick="usa()" href="#"
+                  >United States</a
+                >
+                <a class="dropdown-item" onclick="australia()" href="#"
+                  >Australia</a
+                >
+                <a class="dropdown-item" onclick="russia()" href="#">Russia</a>
+                <a class="dropdown-item" onclick="france()" href="#">France</a>
+                <a class="dropdown-item" onclick="uk()" href="#"
+                  >United Kingdom</a
+                >
               </div>
-            </li>
-          </ul>
-        </div>
+            </div>
+          </li>
+        </ul>
       </nav>
     </header>
 
     <div id="alert"></div>
-
     <h1 id="newsName">Showing Headlines about General</h1>
-
+    
     <hr />
-    <div class="main" id="main"></div>
+    <div class="main" id="main">
+      
+       
+    </div>
   </body>
   <script src="index.js"></script>
 </html>
