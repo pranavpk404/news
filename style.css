@@ -2,7 +2,7 @@ body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
-  overflow-y: hidden;
+  overflow-y: scroll;
 }
 #icon {
   margin-left: 20px;
@@ -79,8 +79,8 @@ nav ul li {
   min-width: 0;
   word-wrap: break-word;
   background-clip: border-box;
-  border: 2px solid rgba(228, 0, 0, 0.125);
-  border-radius: 0.25rem;
+  border-bottom: 2px solid rgb(78, 77, 82);
+
 }
 
 .card-body {
