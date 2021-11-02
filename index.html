@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="shortcut icon" href="/imgs/icon.svg" type="image/x-icon" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <title>News</title>
+  </head>
+  <body class="theme-1" id="body">
+    <header>
+      <nav class="navbar">
+        <img id="icon" src="imgs/icon.svg" alt="icon" />
+        <ul>
+          <li id="list">
+            <div class="dropdown">
+              <button id="btn" class="dropbtn">Theme</button>
+              <div class="dropdown-content">
+                <a class="dropdown-item" id="theme-1" href="#">theme-1</a>
+                <a class="dropdown-item" id="theme-2" href="#">theme-2</a>
+                <a class="dropdown-item" id="theme-3" href="#">theme-3</a>
+              </div>
+            </div>
+          </li>
+          <li id="list">
+            <div class="dropdown">
+              <button class="dropbtn">Category</button>
+              <div class="dropdown-content">
+                <a class="dropdown-item" onclick="general()" href="#"
+                  >General</a
+                >
+                <a class="dropdown-item" onclick="science()" href="#"
+                  >Science</a
+                >
+                <a class="dropdown-item" onclick="technology()" href="#"
+                  >Technology</a
+                >
+                <a class="dropdown-item" onclick="entertainment()" href="#"
+                  >Entertainment</a
+                >
+                <a class="dropdown-item" onclick="health()" href="#">Health</a>
+                <a class="dropdown-item" onclick="sports()" href="#">Sports</a>
+              </div>
+            </div>
+          </li>
+          <li id="list">
+            <div class="dropdown">
+              <button class="dropbtn">Country</button>
+              <div class="dropdown-content">
+                <a class="dropdown-item" onclick="india()" href="#">India</a>
+                <a class="dropdown-item" onclick="usa()" href="#"
+                  >United States</a
+                >
+                <a class="dropdown-item" onclick="australia()" href="#"
+                  >Australia</a
+                >
+                <a class="dropdown-item" onclick="russia()" href="#">Russia</a>
+                <a class="dropdown-item" onclick="france()" href="#">France</a>
+                <a class="dropdown-item" onclick="uk()" href="#"
+                  >United Kingdom</a
+                >
+              </div>
+            </div>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <div id="alert"></div>
+    <h1 id="newsName">Showing Headlines about General</h1>
+    <hr />
+    <div class="main" id="main"></div>
+  </body>
+  <script src="js/index.js"></script>
+</html>
